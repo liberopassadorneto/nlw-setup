@@ -64,15 +64,13 @@ export async function appRoutes(app: FastifyInstance) {
       },
     });
 
-    console.log(day);
-
     const completedHabits = day?.dayHabits.map((dayHabit) => {
       return dayHabit.habitId;
     });
 
     return {
       possibleHabits,
-      completedHabits,
+      completedHabits: completedHabits ?? [],
     };
   });
 
