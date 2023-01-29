@@ -1,11 +1,13 @@
 import cors from '@fastify/cors';
 import fastify from 'fastify';
-import { appRoutes } from './routes';
+import { appRoutes } from './app-routes';
+import { notificationRoutes } from './notifications-routes';
 
 const app = fastify();
 
 app.register(cors);
 app.register(appRoutes);
+app.register(notificationRoutes);
 
 app
   .listen({
